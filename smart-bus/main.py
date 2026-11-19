@@ -1,6 +1,5 @@
 import json
 import time
-from getpass import getpass
 from threading import Event
 
 import oracledb
@@ -32,8 +31,8 @@ SQL_FROTA = """
 def buscar_frota():
 
     with oracledb.connect(
-        user="SEU_USUARIO_ORACLE",
-        password="SUA_SENHA_ORACLE",
+        user="rm566733",
+        password="200506",
         host="oracle.fiap.com.br",
         port=1521,
         sid="ORCL",
@@ -104,6 +103,6 @@ if __name__ == "__main__":
     try:
         main()
     except KeyboardInterrupt:
-        print("\nTeste encerrado.")
+        print("\nSimulação de frota encerrada.")
     except (oracledb.Error, OSError, RuntimeError, ValueError) as erro:
         raise SystemExit(f"Erro: {erro}")
