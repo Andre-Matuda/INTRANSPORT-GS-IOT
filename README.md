@@ -88,6 +88,18 @@ A fonte reproduzível desta demonstração é uma **mensagem sintética** public
 
 **Evidências da entrega:** inserir a foto ou o esquema da montagem real, o link do vídeo e o registro dos resultados observados. No vídeo, mostrar o publicador enviando a previsão e, em seguida, o OLED e o buzzer respondendo na placa. A simulação C++ verificou a lógica do sketch com componentes substituídos por simuladores. Ela não valida a montagem, o Wi‑Fi ou a troca de mensagens com o broker real.
 
+## Testes
+
+Durante o desenvolvimento do SmartBus, foram realizados testes utilizando a API Olho Vivo da SPTrans, com o objetivo de obter informações em tempo real sobre a localização dos ônibus e suas previsões de chegada aos pontos.
+
+Entretanto, durante os testes, identificamos algumas limitações, pois a API não disponibilizava informações de localização e previsão de chegada para todos os ônibus monitorados, dificultando o funcionamento do protótipo conforme o planejado.
+
+Diante dessa dificuldade, desenvolvemos uma API de simulação da frota de ônibus, utilizando dados cadastrados em nosso banco de dados Oracle. Essa solução permite simular as linhas, os destinos e os tempos estimados de chegada dos veículos.
+
+As informações simuladas são transmitidas por meio do protocolo MQTT para o ESP32, responsável por exibi-las no display OLED e acionar os alertas de chegada.
+
+Dessa forma, conseguimos demonstrar as principais funcionalidades do SmartBus, mesmo sem depender exclusivamente da disponibilidade dos dados em tempo real da SPTrans.
+
 ## Limitações
 
 O protótipo exibe a previsão recebida. Ele não rastreia o veículo nem calcula o tempo de chegada. O OLED tem espaço limitado e simplifica acentos na fonte padrão. A demonstração depende de Wi‑Fi e usa um broker público sem autenticação no sketch. Uma implantação real exigiria uma fonte oficial de previsões e um broker autenticado com TLS.
