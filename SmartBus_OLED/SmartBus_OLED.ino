@@ -7,8 +7,8 @@
 #include <Adafruit_SSD1306.h>
 
 // ArduinoJson 7. Preencha a rede Wi-Fi antes de gravar o sketch.
-constexpr char WIFI_SSID[] = "SuperRede";
-constexpr char WIFI_PASSWORD[] = "homer6s5m";
+constexpr char WIFI_SSID[] = "";
+constexpr char WIFI_PASSWORD[] = "";
 constexpr bool FORCAR_MAC = false;
 const uint8_t MAC_PERSONALIZADO[6] = {0x24, 0x6F, 0x28, 0xAA, 0xBB, 0xCC};
 int canalRede = 0;
